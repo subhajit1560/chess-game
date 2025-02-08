@@ -4,8 +4,11 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0e68c; /* Light background color */
 }
+
+
 
 div * {
   padding: 0;
@@ -21,13 +24,16 @@ div * {
   position: relative;
   float: right;
   border-radius: 5px;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid #333; /* Darker border */
   border-style: inset;
   text-align: center;
   padding: 5px 0 0 0;
   background: #fff;
+  color: #333; /* Darker text color */
+  font-weight: bold; /* Bold text */
   transition: .85s linear;
 }
+
 
 .turnhighlight {
   background: #5cb85c !important;
@@ -55,6 +61,8 @@ div * {
 
 .gamecell {
   border: 1px solid #000;
+  background-color: #e0c68c; /* Light wood color */
+
   width: 100%;
   height: 100%;
   max-width: 50px;
@@ -72,6 +80,9 @@ div * {
 .gamecell:hover {
   color: #fff;
   background: rgba(37, 88, 228, 0.712);
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+
   z-index: 2;
   transform: translate(10px, -10px);
   animation: neonBlueText 1.5s ease-in-out infinite alternate;
@@ -79,7 +90,9 @@ div * {
 
 .grey {
   background: rgba(128, 128, 128, 0.801);
+  background: linear-gradient(135deg, #b0b0b0 25%, #d0d0d0 25%, #d0d0d0 50%, #b0b0b0 50%, #b0b0b0 75%, #d0d0d0 75%, #d0d0d0 100%); /* Add a striped effect */
 }
+
 
 .green {
   /*background: green !important;*/

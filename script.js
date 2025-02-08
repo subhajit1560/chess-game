@@ -1,4 +1,9 @@
 let main = {
+    audio: {
+        capture: new Audio('path/to/capture-sound.mp3'),
+        endTurn: new Audio('path/to/end-turn-sound.mp3')
+    },
+
 
     variables: {
       turn: 'w',
@@ -623,6 +628,8 @@ let main = {
       },
   
       capture: function (target) {
+          this.audio.capture.play(); // Play capture sound
+
         let selectedpiece = {
           name: $('#' + main.variables.selectedpiece).attr('chess'),
           id: main.variables.selectedpiece
@@ -651,6 +658,12 @@ let main = {
       },
   
       move: function (target) {
+          $('#' + target.id).hide('slide', { direction: 'up' }, 500, function() {
+              // After the slide up animation, show the piece in the new position
+              $('#' + target.id).html(main.variables.pieces[selectedpiece].img).show('slide', { direction: 'down' }, 500);
+          });
+          this.audio.endTurn.play(); // Play end turn sound
+
   
         let selectedpiece = $('#' + main.variables.selectedpiece).attr('chess');
   
